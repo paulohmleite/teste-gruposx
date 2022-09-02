@@ -4,11 +4,12 @@ from empresas.models import Empresa
 
 
 class ColaboradorSerializer(serializers.ModelSerializer):
-    empresa =serializers.CharField(source='empresa.nome')
-    user = serializers.CharField(source='user.username')
+    # empresa =serializers.CharField(source='empresa.nome')
+    # user = serializers.CharField(source='user.username')
     class Meta:
         model = Colaborador
-        fields = "__all__"
+        # fields = "__all__"
+        exclude = ['user']
 
 class EmpresaSerializer(serializers.ModelSerializer):
     # empresa =serializers.CharField(source='empresa.nome')
